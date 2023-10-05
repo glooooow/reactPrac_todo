@@ -1,6 +1,7 @@
 import { useState, useCallback } from "react";
 import { MdCheckBoxOutlineBlank, MdCheckBox, MdDelete, MdNumbers } from "react-icons/md";
 import cn from "classnames";
+import "../components/Todo.scss";
 
 //기본 템플릿
 const TodoTemplate = ({ children }) => {
