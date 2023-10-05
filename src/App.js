@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import Router from './shared/Router';
 import './App.css';
 

@@ -26,14 +26,24 @@ const Todo = (props) => {
 
     const addTodo = useCallback(
         (title) => {
-            const lastTodo = todos[todos.length -1];
-            const todo = {
-                id: Number(lastTodo.id) + 1,
-                title,
-                checked: false,
-            };
-            setTodos(todos.concat(todo));
-            setTodoId.current += 1;
+            if (todos.length === 0) {
+                const todo = {
+                    id: Number(0) + 1,
+                    title,
+                    checked: false,
+                };
+                setTodos(todos.concat(todo));
+                setTodoId.current += 1;
+            } else {
+                const lastTodo = todos[todos.length - 1];
+                const todo = {
+                    id: Number(lastTodo.id) + 1,
+                    title,
+                    checked: false,
+                };
+                setTodos(todos.concat(todo));
+                setTodoId.current += 1;
+            }
         },
         [todos, setTodoId]
     );
