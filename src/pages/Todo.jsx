@@ -26,7 +26,11 @@ const Todo = (props) => {
 
     const addTodo = useCallback(
         (title) => {
-            if (todos.length === 0) {
+            if (title === "") {
+                alert("할 일을 입력해주세요");
+                return null;
+            } 
+            if ((title !== "") && (todos.length === 0)) {
                 const todo = {
                     id: Number(0) + 1,
                     title,
@@ -34,7 +38,9 @@ const Todo = (props) => {
                 };
                 setTodos(todos.concat(todo));
                 setTodoId.current += 1;
-            } else {
+                alert("등록 완료");
+            }
+            if ((title !== "") && (todos.length > 0)){
                 const lastTodo = todos[todos.length - 1];
                 const todo = {
                     id: Number(lastTodo.id) + 1,
@@ -43,17 +49,24 @@ const Todo = (props) => {
                 };
                 setTodos(todos.concat(todo));
                 setTodoId.current += 1;
+                alert("등록 완료");
             }
         },
         [todos, setTodoId]
     );
 
+
+
     const deleteTodo = useCallback(
         (id) => {
-            setTodos(todos.filter((todo) => Number(todo.id) !== id))
-        },
+           setTodos(todos.filter((todo) => Number(todo.id) !== id).map((value,index)=>{
+                return {...value, id:(index+1)}
+            }));
+         },
         [todos]
     );
+
+
 
     const checkTodo = useCallback(
         (id) => {
