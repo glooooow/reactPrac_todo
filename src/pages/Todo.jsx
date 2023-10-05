@@ -28,7 +28,6 @@ const Todo = (props) => {
         (title) => {
             if (title === "") {
                 alert("할 일을 입력해주세요");
-                return null;
             } 
             if ((title !== "") && (todos.length === 0)) {
                 const todo = {
