@@ -43,8 +43,16 @@ export {TodoAdd};
 const TodoList = ({ todos, deleteTodo, checkTodo }) => {
     return (
         <div className="TodoList">
+            <thead>
+                <tr>
+                    <th className="todoIds" style={{"width": "50px"}}>No.</th>
+                    <th className="titles" style={{"width": "300px", "textAlign": "center"}}>What's To do?</th>
+                    <th className="checked" style={{"width": "100px", "textAlign":"center"}}>Select</th>
+                    <th className="delete" style={{"width": "100px", "textAlign":"center"}}>Delete</th>
+                </tr>
+            </thead>
             {todos.map((todo) => (
-                <TodoListItem todo = {todo} key={todo.id} deleteTodo={deleteTodo} checkTodo={checkTodo} />
+                <TodoListItem todo={todo} key={todo.id} deleteTodo={deleteTodo} checkTodo={checkTodo} />
             ))}
         </div>
     )
@@ -59,14 +67,14 @@ const TodoListItem = ({ todo, deleteTodo, checkTodo }) => {
     const { id, title, checked } = todo;
     return (
         <div className="TodoList-Table">
-            <thead>
+            <tbody>
                 <tr>
-                    <th className="todoId"><MdNumbers />{id}</th>
-                    <th className="title">{title}</th>
-                    <th className={cn("checkbox", { checked })} onClick={() => checkTodo(id)}>{checked ? <MdCheckBox /> : <MdCheckBoxOutlineBlank />}</th>
-                    <th className="delete" onClick={() => deleteTodo(id)}><MdDelete /> </th>
+                    <td className="todoId" style={{"width": "50px"}}><MdNumbers />{id}</td>
+                    <td className="title" style={{"width": "300px", "textAlign":"center"}}>{title}</td>
+                    <td className={cn("checkbox", { checked })} onClick={() => checkTodo(id)} style={{"width": "100px", "textAlign":"center"}}>{checked ? <MdCheckBox /> : <MdCheckBoxOutlineBlank />}</td>
+                    <td className="delete" onClick={() => deleteTodo(id)} style={{"width": "100px", "textAlign":"center"}}><MdDelete /> </td>
                 </tr>
-            </thead>
+            </tbody>
         </div>
     );
 }
