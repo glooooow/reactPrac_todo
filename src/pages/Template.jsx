@@ -62,10 +62,10 @@ const TodoList = ({ todos, deleteTodo, checkTodo }) => {
         <div className="TodoList-Table-Head">
             <thead>
                 <tr>
-                    <th className="todoIds" style={{"width": "100px"}}>No.</th>
-                    <th className="titles" style={{"width": "400px", "textAlign": "center"}}>What's To do?</th>
-                    <th className="checked" style={{"width": "100px", "textAlign":"center"}}>Select</th>
-                    <th className="delete?" style={{"width": "100px", "textAlign":"center"}}>Delete</th>
+                <td style={{"width": "70px", "textAlign":"center"}}><span class="tag is-dark">No.</span></td>
+                <td style={{"width": "400px", "textAlign":"center"}}><span class="tag is-warning">What's To do?</span></td>
+                <td style={{"width": "100px", "textAlign":"center"}}><span class="tag is-link">Select</span></td>
+                <td style={{"width": "100px", "textAlign":"center"}}><span class="tag is-danger">Delete</span></td>
                 </tr>
             </thead>
             {todos.map((todo) => (
@@ -86,8 +86,8 @@ const TodoListItem = ({ todo, deleteTodo, checkTodo }) => {
         <div className="TodoList-Table-Body">
             <tbody>
                 <tr>
-                    <td className="todoId" style={{"width": "100px"}}><MdNumbers />{id}</td>
-                    <td className="todoTitle" style={checked? {"textAlign":"center", "textDecoration":"line-through"} : {"textAlign":"center"}}>{title}</td>
+                    <td style={{"width": "70px", "textAlign":"center"}}><span class="tag is-light">{id}.</span></td>
+                    <td className="todoTitle" style={checked? {"textAlign":"center", "textDecoration":"line-through", "fontWeight":"bold"} : {"textAlign":"center"}}>{title}</td>
                     <td style={{"width": "100px", "textAlign":"center"}}><label className="checkbox" />{checked ? <input type="checkbox" onClick={() => checkTodo(id)} checked/> : <input type="checkbox" onClick={() => checkTodo(id)} />}</td>
                     <td style={{"width": "100px", textAlign:"center"}}><button className="delete is-small" onClick={() => deleteTodo(id)}/></td>
                 </tr>
