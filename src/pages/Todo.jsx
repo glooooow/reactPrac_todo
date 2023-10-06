@@ -1,5 +1,5 @@
 import React, { useCallback, useRef, useState } from 'react';
-import TodoTemplate, { TodoList } from "./Template";
+import TodoTemplate, { TodoList, TodoListItem } from "./Template";
 import { TodoAdd } from './Template';
 
 const Todo = (props) => {
@@ -65,7 +65,7 @@ const Todo = (props) => {
     );
 
 
-
+    
     const checkTodo = useCallback(
         (id) => {
             setTodos(todos.map((todo) => (todo.id === id ? { ...todo, checked: !todo.checked } : todo)))

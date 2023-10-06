@@ -8,7 +8,7 @@ import "components/Todo.scss";
 const TodoTemplate = ({ children }) => {
     return (
         <div className="TodoTemplate">
-            <div>
+            {/* <div>
                 <nav>
                     <ul>
                         <li><button class="button is-light">Main</button></li>
@@ -17,8 +17,8 @@ const TodoTemplate = ({ children }) => {
                         <li><button class="button is-light">More Info</button></li>
                     </ul>
                 </nav>
-            </div>          
-            <div class="tags are-large" style={{"margin-top": "50px"}}>
+            </div>           */}
+            <div class="tags are-large" style={{"margin-top": "20px"}}>
                 <div class="tags has-addons">
                     <span class="tag is-dark" style={{"width": "180px", "font-weight": "bold"}}>할일 목록</span>
                     <span class="tag is-info">0.0.1 v</span>
@@ -62,8 +62,8 @@ const TodoList = ({ todos, deleteTodo, checkTodo }) => {
         <div className="TodoList-Table-Head">
             <thead>
                 <tr>
-                    <th className="todoIds" style={{"width": "50px"}}>No.</th>
-                    <th className="titles" style={{"width": "300px", "textAlign": "center"}}>What's To do?</th>
+                    <th className="todoIds" style={{"width": "100px"}}>No.</th>
+                    <th className="titles" style={{"width": "400px", "textAlign": "center"}}>What's To do?</th>
                     <th className="checked" style={{"width": "100px", "textAlign":"center"}}>Select</th>
                     <th className="delete?" style={{"width": "100px", "textAlign":"center"}}>Delete</th>
                 </tr>
@@ -86,9 +86,9 @@ const TodoListItem = ({ todo, deleteTodo, checkTodo }) => {
         <div className="TodoList-Table-Body">
             <tbody>
                 <tr>
-                    <td className="todoId" style={{"width": "50px"}}><MdNumbers />{id}</td>
-                    <td className="todoTitle" style={{"width": "300px", "textAlign":"center"}}>{title}</td>
-                    <td className={cn("checkbox", { checked })} onClick={() => checkTodo(id)} style={{"width": "100px", "textAlign":"center"}}>{checked ? <MdCheckBox /> : <MdCheckBoxOutlineBlank />}</td>
+                    <td className="todoId" style={{"width": "100px"}}><MdNumbers />{id}</td>
+                    <td className="todoTitle" style={checked? {"width": "400px", "textAlign":"center", "textDecoration":"line-through"} : {"width": "400px", "textAlign":"center"}}>{title}</td>
+                    <td className={cn("checkbox", { checked })} onClick={() => checkTodo(id)} style={{"width": "100px", "textAlign":"center"}}>{checked ? <MdCheckBox /> : (<MdCheckBoxOutlineBlank />)}</td>
                     <td className="btn-delete" onClick={() => deleteTodo(id)} style={{"width": "100px", "textAlign":"center"}}><MdDelete /> </td>
                 </tr>
             </tbody>
