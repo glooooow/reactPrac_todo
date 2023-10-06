@@ -1,2 +1,52 @@
 @charset "UTF-8";
-@import "../pages/Template.jsx";
+
+ $primary-color:cadetblue;
+
+.TodoTemplate {
+    width: flex;
+    margin: 20px 20px 20px 20px;
+}
+
+nav {
+    margin: 0px 20px 20px 0px;
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+  
+    li {
+        justify-items: center;
+        margin-left: 7%;
+        margin-right: 7%;
+        display: inline-block;
+    }
+  
+    a {
+      display: block;
+      padding: 6px 12px;
+      text-decoration: none;
+    }
+  }
+
+// .app-title {
+//     font-style: italic;
+//     color: $primary-color;
+// }
+
+.TodoAdd{
+    margin: 20px 0px 20px 0px;
+}
+
+.input {
+    width: 70%;
+    margin-right: 20px;
+}
+
+.btn-submit {
+
+}
+
+.TodoList-Table-Body {
+    font-size: lage;
+}
