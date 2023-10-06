@@ -87,9 +87,9 @@ const TodoListItem = ({ todo, deleteTodo, checkTodo }) => {
             <tbody>
                 <tr>
                     <td className="todoId" style={{"width": "100px"}}><MdNumbers />{id}</td>
-                    <td className="todoTitle" style={checked? {"width": "400px", "textAlign":"center", "textDecoration":"line-through"} : {"width": "400px", "textAlign":"center"}}>{title}</td>
+                    <td className="todoTitle" style={checked? {"textAlign":"center", "textDecoration":"line-through"} : {"textAlign":"center"}}>{title}</td>
                     <td className={cn("checkbox", { checked })} onClick={() => checkTodo(id)} style={{"width": "100px", "textAlign":"center"}}>{checked ? <MdCheckBox /> : (<MdCheckBoxOutlineBlank />)}</td>
-                    <td className="btn-delete" onClick={() => deleteTodo(id)} style={{"width": "100px", "textAlign":"center"}}><MdDelete /> </td>
+                    <td style={{"width": "100px", textAlign:"center"}}><button className="delete is-small" onClick={() => deleteTodo(id)}/></td>
                 </tr>
             </tbody>
         </div>

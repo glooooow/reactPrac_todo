@@ -7,6 +7,7 @@
     margin: 20px 20px 20px 20px;
 }
 
+
 nav {
     margin: 0px 20px 20px 0px;
     ul {
@@ -29,24 +30,34 @@ nav {
     }
   }
 
-// .app-title {
-//     font-style: italic;
-//     color: $primary-color;
-// }
 
 .TodoAdd{
     margin: 20px 0px 20px 0px;
 }
+
+
 
 .input {
     width: 70%;
     margin-right: 20px;
 }
 
-.btn-submit {
 
+
+.TodoList-Table-Head {
+    margin-left: 20px;
+    tr {
+    height: 50px;
+    }
 }
 
 .TodoList-Table-Body {
-    font-size: lage;
+    tr {
+    height: 30px;
+    }
+} 
+
+
+.todoTitle {
+    width: 400px;
 }
